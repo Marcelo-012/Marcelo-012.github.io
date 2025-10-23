@@ -1,0 +1,96 @@
+/* Botón hamburguesa */
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	z-index: 1001;
+}
+
+.menu-toggle span {
+	width: 30px;
+	height: 3px;
+	background-color: #fff;
+	margin: 4px 0;
+	transition: 0.4s;
+	display: block;
+}
+
+header.abajo .menu-toggle span {
+	background-color: #000;
+}
+
+/* Animación del botón hamburguesa */
+.menu-toggle.active span:nth-child(1) {
+	transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+	opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+	transform: rotate(45deg) translate(-8px, -6px);
+}
+
+/* RESPONSIVE - Mostrar hamburguesa */
+@media (max-width: 1300px) {
+	.menu-toggle {
+		display: flex;
+	}
+}
+
+
+/* Responsive para logo */
+@media (max-width: 1300px) {
+	header {
+		padding: 15px 20px;
+	}
+
+	.logo {
+		width:100px;
+		height: 97px;
+	}
+
+	.contacto-derecha,
+	.contacto-izquierda {
+		display: none;
+	}
+
+	.header-right {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 280px;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.97);
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 80px 20px 20px 20px;
+		transition: 0.4s;
+		overflow-y: auto;
+		z-index: 999;
+	}
+
+	header.abajo .header-right {
+		background: rgba(255, 255, 255, 0.98);
+		box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+	}
+
+	.header-right.active {
+		right: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.logo {
+		width: 60px;
+		height: 66px;
+	}
+
+	.header-right {
+		width: 100%;
+	}
+}

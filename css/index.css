@@ -5,6 +5,7 @@
 	box-sizing: border-box;
 }
 
+
 .Carrusel {
 	position: relative;
 	width: 100%;
@@ -25,4 +26,11 @@
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+}
+
+.Bienvenida {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: 'parisienne', cursive;
+    /*color: #ffffff;*/
 }

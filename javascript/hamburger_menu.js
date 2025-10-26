@@ -1,13 +1,13 @@
 // Script para el menú hamburguesa
 document.addEventListener('DOMContentLoaded', function() {
 	var menuToggle = document.getElementById('menu-toggle');
-	var headerRight = document.getElementById('header-right');
+	var logoMenu = document.querySelector('.logo-menu'); // Cambio aquí
 	
 	// Toggle del menú principal
 	menuToggle.addEventListener('click', function(e) {
 		e.preventDefault();
 		this.classList.toggle('active');
-		headerRight.classList.toggle('active');
+		logoMenu.classList.toggle('active'); // Cambio aquí
 	});
 
 	// Script para expandir/colapsar submenús en móvil
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	submenuToggles.forEach(function(toggle) {
 		toggle.addEventListener('click', function(e) {
 			// Solo prevenir en móviles
-			if (window.innerWidth <= 1300) { 
+			if (window.innerWidth <= 1300) {
 				e.preventDefault();
 				var parentLi = this.parentElement;
 				

@@ -1,0 +1,283 @@
+.seccion-tarjetas {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+}
+
+.tarjeta-info {
+    width: 650px;
+    height: 350px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+/* Efecto de intercalado - desplaza la segunda tarjeta hacia abajo */
+.tarjeta-info.offset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Efecto hover */
+.tarjeta-info:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 8px 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de la imagen */
+.imagen-habitacion {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imagen-habitacion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-info:hover .imagen-habitacion img {
+    transform: scale(1.1);
+}
+
+/* Overlay con transparencia en la parte inferior */
+.overlay-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+    transition: background 0.3s ease;
+}
+
+/*.tarjeta-info:hover .overlay-info {
+    background: linear-gradient(to top, rgba(137, 69, 144, 0.9) 0%, rgba(137, 69, 144, 0.6) 50%, transparent 100%);
+}*/
+
+/* Título */
+.titulo-tarjeta {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #fff;
+    text-align: left;
+    margin: 0 0 20px 0;
+}
+
+/* Contenedor de detalles */
+.detalles-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.detalle-hab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Iconos Font Awesome */
+.detalle-hab i {
+    font-size: 20px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-info:hover .detalle-hab i {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.detalle-hab span {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+    .contenedor-tarjetas {
+        gap: 20px;
+    }
+    
+    .tarjeta-info {
+        width: 550px;
+        height: 300px;
+    }
+
+    .tarjeta-info.offset {
+        margin-top: 30px;
+    }
+    
+    .Bienvenida {
+        font-size: 28px;
+    }
+
+    .titulo-tarjeta {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .overlay-info {
+        padding: 20px;
+    }
+
+    .detalles-container {
+        gap: 40px;
+    }
+
+    .detalle-hab i {
+        font-size: 25px;
+    }
+
+    .detalle-hab span {
+        font-size: 12px;
+    }
+}
+
+
+
+@media (max-width: 768px) { 
+    .contenedor-tarjetas {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tarjeta-info {
+        width: 100%;
+        max-width: 500px;
+        height: 280px;
+        margin: 10px 0;
+    }
+
+    .tarjeta-info.offset {
+        margin-top: 10px;
+    }
+    
+    .Bienvenida {
+        font-size: 24px;
+    }
+
+    .titulo-tarjeta {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .overlay-info {
+        padding: 18px;
+    }
+
+    .detalles-container {
+        gap: 35px;
+    }
+
+    .detalle-hab i {
+        font-size: 16px;
+    }
+
+    .detalle-hab span {
+        font-size: 11px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .tarjeta-info {
+        width: 100%;
+        max-width: 350px;
+        height: 200px;
+    }
+    
+    .Bienvenida {
+        font-size: 20px;
+    }
+
+    .titulo-tarjeta {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .overlay-info {
+        padding: 12px;
+    }
+
+    .detalles-container {
+        gap: 25px;
+    }
+
+    .detalle-hab i {
+        font-size: 14px;
+    }
+
+    .detalle-hab span {
+        font-size: 9px;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 380px) {
+    .tarjeta-info {
+        width: 100%;
+        height: 180px;
+    }
+
+    .titulo-tarjeta {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .overlay-info {
+        padding: 10px;
+    }
+
+    .detalles-container {
+        gap: 20px;
+    }
+
+    .detalle-hab i {
+        font-size: 10px;
+    }
+
+    .detalle-hab span {
+        font-size: 8px;
+    }
+}

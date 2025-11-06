@@ -10,8 +10,108 @@
 	position: relative;
 	width: 100%;
 	height: 100vh;
-	background: url(/img/ZONA1.jpg);
+	background: url("/img/imgCuartos/CJunior/IMG_0154-HDR.jpg");
 	background-size: cover;
 	background-position: center center;
+	background-repeat: no-repeat;
+	/*background-attachment: fixed; /* Efecto parallax opcional */
 }
 
+.banner {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    font-family: 'parisienne', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Bienvenida {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #A61281;
+    width: fit-content;
+    max-width: 90%;
+}
+
+/* RESPONSIVE ZONA 1 */
+@media (max-width: 1200px) {
+    .Zona1 {
+        height: 80vh;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .banner {
+        margin-bottom: 35px;
+        padding: 0 18px;
+    }
+
+    .Bienvenida {
+        font-size: 32px;
+        padding-bottom: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .Zona1 {
+        height: 60vh;
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll; /* Desactiva parallax en tablets */
+    }
+
+    .banner {
+        margin-bottom: 30px;
+        padding: 0 15px;
+    }
+
+    .Bienvenida {
+        font-size: 28px;
+        padding-bottom: 12px;
+        border-bottom-width: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Zona1 {
+        height: 50vh;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .banner {
+        margin-bottom: 25px;
+        padding: 0 12px;
+    }
+
+    .Bienvenida {
+        font-size: 24px;
+        padding-bottom: 10px;
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 360px) {
+    .Zona1 {
+        height: 45vh;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .banner {
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .Bienvenida {
+        font-size: 20px;
+        padding-bottom: 8px;
+        max-width: 100%;
+        border-bottom-width: 1.5px;
+    }
+}

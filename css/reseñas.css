@@ -1,0 +1,22 @@
+.contenedor-reviews {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    overflow-x: hidden; /* Evita scroll horizontal */
+}
+
+/* Forzar que el widget sea responsive */
+.elfsight-app-b02cd7d0-61cd-4a34-ac44-9e3ee09f3c9e {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .contenedor-reviews {
+        padding: 0 15px;
+    }
+}

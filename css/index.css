@@ -4,20 +4,65 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
-
-.Carrusel {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	background: url(/img/casavegas_I1.jpg);
-	background-size: cover;
-	background-position: center center;
+/* Estilos para el carrusel de imágenes */
+.SliderCarrusel {
+    width: 100%;
+    height: auto;
+    margin: 0px auto 0px;
+    overflow: hidden;
 }
 
+.SliderCarrusel ul {
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: slide 25s infinite alternate ease-in-out;
+}
+
+.SliderCarrusel li {
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+/* Termina estilos para el texto sobre el carrusel */
+
 .banner {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    font-family: 'parisienne', cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Bienvenida {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #A61281; /*#894590*/
+    width: fit-content; /* El borde solo abarca el texto */
+    max-width: 90%; /* Límite máximo en pantallas pequeñas */
+}
+/* Estilos para el texto sobre el carrusel */
+.texto h2 {
+    font-size: 45px;
+    margin-bottom: 35px;
+    font-family: 'parisienne', cursive;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.2;
+}
+
+.texto {
     position: absolute;
-    font-style: italic;
+    font-family: "Story Script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -26,11 +71,204 @@
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
 }
 
-.Bienvenida {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-family: 'parisienne', cursive;
-    /*color: #ffffff;*/
+
+.texto p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+/* Termina estilos para el texto sobre el carrusel */
+
+/* Estilos para las imágenes del carrusel */
+.SliderCarrusel img {
+    width: 100%;
+    display: block;
+}
+/* Termina estilos para las imágenes del carrusel */
+
+
+/* Estilos para la sección de servicios */
+ .container {
+            max-width: 1200px;
+            margin: 40px auto;
+           
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: #f8f8f8;
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+        }
+
+        .icon-container i {
+            font-size: 48px;
+            color: #A61281;
+        }
+
+        .service-title {
+            color: #A61281;
+            font-size: 20px;
+            font-family: "PT Sans", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .service-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #A61281;
+        }
+
+        .service-description {
+            color: #666;
+            font-family: "PT Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            line-height: 1.6;
+        }
+        /* Efectos hover al pasar cursor*/
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+        }      
+
+        /*.service-card:hover i {
+            color: #ffd700;
+        }
+
+        .service-card:hover .service-title {
+            color: #ffd700;
+        }
+
+        .service-card:hover .service-title::after {
+            background-color: #ffd700;
+        }*/
+
+/* Animación para el carrusel */
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    16% {margin-left: 0;}
+
+    20% {margin-left: -100%;}
+    36% {margin-left: -100%;}
+
+    40% {margin-left: -200%;}
+    56% {margin-left: -200%;}
+
+    60% {margin-left: -300%;}
+    76% {margin-left: -300%;}
+
+    80% {margin-left: -400%;}
+    100% {margin-left: -400%;}
+}
+
+/* RESPONSIVE - Tablets */
+@media (max-width: 1200px) {
+    .Bienvenida {
+        font-size: 28px;
+        max-width: 85%;
+    }
+
+    .texto {
+        padding: 15px;
+        width: 85%;
+    }
+
+    .texto h2 {
+        font-size: 35px;
+        margin-bottom: 25px;
+    }
+
+    .texto p {
+        font-size: 16px;
+    }
+}
+
+/* RESPONSIVE - Móviles grandes */
+@media (max-width: 768px) {
+        .Bienvenida {
+        font-size: 24px;
+        max-width: 90%;
+    }
+
+    .texto {
+        padding: 15px 10px;
+        width: 90%;
+        border-radius: 8px;
+    }
+
+    .texto h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .texto p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* RESPONSIVE - Móviles pequeños */
+@media (max-width: 480px) {
+    .Bienvenida {
+        font-size: 20px;
+        max-width: 95%;
+        padding-bottom: 10px;
+    }
+
+    .texto {
+        padding: 12px 8px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .texto h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .texto p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+/* RESPONSIVE - Móviles muy pequeños */
+@media (max-width: 360px) {
+    
+    .texto {
+        padding: 10px 6px;
+        width: 95%;
+    }
+
+    .texto h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .texto p {
+        font-size: 11px;
+    }
 }

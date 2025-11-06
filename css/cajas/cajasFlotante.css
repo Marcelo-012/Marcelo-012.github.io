@@ -1,0 +1,138 @@
+.seccion-cajas {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cajas-informativas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.caja {
+    width: 300px;
+    height: 400px; /* Cambio a auto para que se adapte al contenido */
+    padding: 20px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+    flex-shrink: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Cambio a columna para organizar verticalmente */
+    align-items: center;
+    justify-content: flex-start; /* Alinear al inicio */
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.caja:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 8px 15px 25px rgba(0, 0, 0, 0.9);
+    background: linear-gradient(360deg, #A61281 0%, #f5f5f5 100%);
+}
+
+/* Encabezado de la caja */
+.caja .encabezado {
+    font-size: 18px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #333;
+    text-align: center;
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.caja:hover .encabezado {
+    color: #000;
+}
+
+/* Imagen dentro de la caja */
+.caja img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* o contain, según prefieras */
+    margin: 15px 0;
+    border-radius: 8px; /* opcional, para darle mejor aspecto */
+
+}
+
+/* Texto de la caja */
+.caja p {
+    text-align: center;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 15px 0 0 0;
+    transition: color 0.3s ease;
+}
+
+/* Cambiar color del texto en hover */
+.caja:hover p {
+    /*color: #333;*/
+    color: #f5f5f5;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* RESPONSIVE - Para que se vean bien en móviles */
+@media (max-width: 1024px) {
+    .cajas-informativas {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .caja {
+        width: 280px;
+    }
+    
+    .Bienvenida {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .cajas-informativas {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .caja {
+        width: 100%;
+        max-width: 400px;
+        margin: 10px 0;
+    }
+    
+    .Bienvenida {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caja {
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+    }
+    
+    .Bienvenida {
+        font-size: 20px;
+    }
+}

@@ -1,17 +1,282 @@
-/* Estilos generales */
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
-
-/* Zona 1 - Banner principal */
-.Zona1 {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	background: url(/img/imgCuartos/ZONA1.jpg);
-	background-size: cover;
-	background-position: center center;
+.seccion-cajas {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
+.banner2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    font-family: 'parisienne', cursive;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.texto{
+    width: 1200px auto;
+    text-align: center;
+    align-items: center;
+	background: rgba(227, 225, 225, 0.6);
+	padding: 40px 60px;
+	border-radius: 15px;
+	box-shadow: 0 8px 32px rgba(53, 53, 53, 0.3);
+    display: flex;
+    margin-bottom: 80px;
+}
+
+.Bienvenida {
+    font-size: 50px;
+    color: #333;
+    font-family: 'parisienne', cursive;
+    font-weight: 400;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #A61281;
+    width: fit-content;
+    max-width: 90%;
+}
+
+
+.descripcion{
+    font-style: "PT Sans", sans-serif;
+	color: #5e5d5d;
+	text-align: justify;
+    font-size: 1.3rem;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cajas-informativas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.caja {
+    width: 550px;
+    height: 350px;
+    position: relative;
+    border-radius: 15px;
+    background-color: #f5f5f5;
+    box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    margin-bottom: 40px;
+    overflow: hidden; /* AÑADIDO para contener la imagen */
+}
+
+/* Efecto hover */
+.caja:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 8px 15px 25px rgba(0, 0, 0, 0.9);
+}
+
+/* Encabezado de la caja */
+.caja .encabezado {
+    font-size: 50px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #f2ecec;
+    text-align: center;
+    padding-bottom: 10px;
+    width: 80%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    margin: 20%;
+    z-index: 2; /* AÑADIDO para que esté sobre la imagen */
+}
+
+/* Imagen dentro de la caja - CORREGIDO */
+.caja img {
+    width: 100%;
+    height: 100%; /* CAMBIADO de auto a 100% */
+    object-fit: cover; /* CAMBIADO de contain a cover */
+    object-position: center; /* AÑADIDO para centrar la imagen */
+    border-radius: 15px;
+    transition: transform 0.3s ease; /* AÑADIDO para efecto hover */
+}
+
+/* Efecto hover para la imagen */
+.caja:hover img {
+    transform: scale(1.1); /* AÑADIDO efecto zoom suave */
+}
+
+/* RESPONSIVE - Mejorado */
+@media (max-width: 1200px) {
+    .caja {
+        width: 48%; /* Ocupa casi la mitad del ancho */
+        height: 300px;
+    }
+    
+    .caja .encabezado {
+        font-size: 40px;
+        margin: 15%;
+    }
+    
+    .Bienvenida {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cajas-informativas {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .caja {
+        width: 45%;
+        height: 280px;
+    }
+    
+    .caja .encabezado {
+        font-size: 35px;
+        margin: 15%;
+    }
+    
+    .Bienvenida {
+        font-size: 35px;
+        font-family: 'parisienne', cursive;
+        font-weight: 400;
+    }
+    
+    .banner h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) { 
+    .cajas-informativas {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .caja {
+        width: 100%;
+        max-width: 500px;
+        height: 250px;
+        margin: 0;
+    }
+    
+    .caja .encabezado {
+        font-size: 30px;
+        margin: 10%;
+    }
+    
+    .Bienvenida {
+        font-size: 30px;
+    }
+    
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+    
+    .banner p1 {
+        font-size: 1.1rem;
+    }
+    
+    .texto {
+        margin-bottom: 50px;
+        padding: 30px 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .caja {
+        height: 220px;
+    }
+    
+    .caja .encabezado {
+        font-size: 25px;
+        margin: 8%;
+    }
+    
+    .Bienvenida {
+        font-size: 25px;
+    }
+    
+    .banner {
+        padding: 30px 40px;
+    }
+    
+    .banner h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .caja {
+        width: 100%;
+        height: 200px;
+        min-height: 200px;
+    }
+    
+    .caja .encabezado {
+        font-size: 22px;
+        margin: 5%;
+        width: 90%;
+    }
+    
+    .Bienvenida {
+        font-size: 22px;
+    }
+    
+    .banner h1 {
+        font-size: 1.8rem;
+    }
+    
+    .banner p1 {
+        font-size: 1rem;
+    }
+    
+    .banner {
+        padding: 20px 30px;
+    }
+    
+    .texto {
+        padding: 20px 30px;
+        margin-bottom: 40px;
+    }
+    
+    .descripcion {
+        font-size: 1.1rem;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .caja {
+        height: 180px;
+    }
+    
+    .caja .encabezado {
+        font-size: 20px;
+    }
+    
+    .Bienvenida {
+        font-size: 20px;
+    }
+}

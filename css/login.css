@@ -1,0 +1,487 @@
+/* Importamos la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffebee;
+    background-image: url("/img/casavegas_I2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Estilos para el logo del formulario */
+.logo-form {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+/* El contenedor principal blanco */
+.container {
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+/* Contenedor de AMBOS formularios */
+.container-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    transition: all 0.7s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+/* Estilos para el formulario */
+form {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.social-networks {
+    margin: 15px 0;
+}
+
+.social-networks ion-icon {
+    font-size: 28px;
+    margin: 0 10px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.social-networks ion-icon:hover {
+    color: #9c27b0;
+}
+
+form span {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.container-input {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.container-input ion-icon {
+    color: #555;
+    margin-right: 10px;
+}
+
+.container-input input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-input input::placeholder {
+    color: #888;
+}
+
+form a {
+    color: #555;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+    transition: color 0.3s;
+}
+
+form a:hover {
+    color: #9c27b0;
+    text-decoration: underline;
+}
+
+.button {
+    background-color: #8bc34a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 50px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #9ccc65;
+}
+
+/* --- ESTADO INICIAL (Login) --- */
+.sign-in {
+    z-index: 2;
+    opacity: 1;
+}
+
+.sign-up {
+    z-index: 1;
+    opacity: 0;
+}
+
+/* --- ESTILOS DEL OVERLAY (Panel Morado) --- */
+.container-overlay {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.7s cubic-bezier(0.39, 0.58, 0.57, 1);
+    z-index: 100;
+    background-color: rgba(156, 39, 176, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+    border-top-left-radius: 120px 60px;
+    border-bottom-left-radius: 120px 60px;
+}
+
+.overlay-panel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    text-align: center;
+    transition: all 0.7s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.overlay-panel h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+}
+
+.overlay-panel p {
+    font-size: 14px;
+    margin: 20px 0 30px;
+}
+
+.overlay-panel .button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+}
+
+.overlay-panel .button:hover {
+    background-color: #ffffff;
+    color: #9c27b0;
+}
+
+#overlay-left {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+#overlay-right {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* ESTADO ACTIVO */
+.container.active .container-overlay {
+    transform: translateX(-100%);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 120px 60px;
+    border-bottom-right-radius: 120px 60px;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.active #overlay-left {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.container.active #overlay-right {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+============================================ */
+
+/* Tablets (768px y menos) */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        min-height: 550px;
+    }
+
+    .container-form {
+        width: 100%;
+        position: relative;
+    }
+
+    form {
+        padding: 0 30px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .logo-form {
+        max-width: 150px;
+        margin-bottom: 15px;
+    }
+
+    .social-networks ion-icon {
+        font-size: 24px;
+        margin: 0 8px;
+    }
+
+    form span {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .container-input {
+        padding: 9px 12px;
+        margin: 6px 0;
+    }
+
+    .container-input input {
+        font-size: 13px;
+    }
+
+    /* Ocultar overlay en móviles y mostrar formularios uno a la vez */
+    .container-overlay {
+        display: none;
+    }
+
+    /* Por defecto mostrar login */
+    .sign-in {
+        position: relative;
+        transform: none;
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .sign-up {
+        position: absolute;
+        transform: none;
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Cuando está activo, mostrar registro */
+    .container.active .sign-in {
+        opacity: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .container.active .sign-up {
+        opacity: 1;
+        z-index: 2;
+        pointer-events: all;
+    }
+
+    /* Agregar botones de cambio en móvil */
+    form::after {
+        content: '';
+        display: block;
+        margin-top: 15px;
+    }
+
+    .sign-in::after {
+        content: '¿No tienes cuenta? ';
+    }
+
+    .button {
+        padding: 10px 40px;
+        font-size: 12px;
+    }
+
+    .overlay-panel h2 {
+        font-size: 2rem;
+    }
+
+    .overlay-panel p {
+        font-size: 13px;
+        margin: 15px 0 20px;
+    }
+}
+
+/* Móviles (480px y menos) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        min-height: 500px;
+        border-radius: 10px;
+    }
+
+    form {
+        padding: 0 25px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .logo-form {
+        max-width: 120px;
+        margin-bottom: 12px;
+        margin-top: -5px;
+    }
+
+    .social-networks {
+        margin: 10px 0;
+    }
+
+    .social-networks ion-icon {
+        font-size: 22px;
+        margin: 0 6px;
+    }
+
+    form span {
+        font-size: 11px;
+        margin-bottom: 12px;
+    }
+
+    .container-input {
+        padding: 8px 10px;
+        margin: 5px 0;
+        border-radius: 6px;
+    }
+
+    .container-input ion-icon {
+        font-size: 18px;
+        margin-right: 8px;
+    }
+
+    .container-input input {
+        font-size: 12px;
+    }
+
+    form a {
+        font-size: 11px;
+        margin: 12px 0 8px;
+    }
+
+    .button {
+        padding: 10px 35px;
+        font-size: 11px;
+        margin-top: 8px;
+    }
+}
+
+/* Móviles pequeños (360px y menos) */
+@media (max-width: 360px) {
+    .container {
+        min-height: 480px;
+    }
+
+    form {
+        padding: 0 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .logo-form {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .social-networks ion-icon {
+        font-size: 20px;
+        margin: 0 5px;
+    }
+
+    form span {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .container-input {
+        padding: 7px 10px;
+    }
+
+    .container-input ion-icon {
+        font-size: 16px;
+    }
+
+    .container-input input {
+        font-size: 11px;
+    }
+
+    .button {
+        padding: 9px 30px;
+        font-size: 10px;
+    }
+}

@@ -35,40 +35,30 @@
 			transform: rotate(45deg) translate(-8px, -6px);
 		}
 
-		/* RESPONSIVE - Mostrar hamburguesa */
-		@media (max-width: 1300px) {
-			.menu-toggle {
-				display: flex;
-			}
-		}
 
-/* RESPONSIVE - Navegación móvil */
+/* Responsive para logo */
 @media (max-width: 1300px) {
 	
+	.menu-toggle {
+		position: relative;
+		display: flex;
+	}
+
 	header {
-		flex-direction: row;
-		align-items: center;
-		padding: 10px 20px;
+		padding: 15px 20px;
 	}
 
 	.logo {
-		margin-top: 0;
-		width: 120px;
-		height: 150px;
+		width:100px;
+		height: 97px;
 	}
 
-	/* Ocultar barra de información */
-	.top-info-bar {
+	.contacto-derecha,
+	.contacto-izquierda {
 		display: none;
 	}
 
-	nav {
-		width: 100%;
-		margin-right: 0;
-	}
-	
-	/* Ajuste 2: Reducir espacio superior del menú desplegado */
-	.logo-menu {
+	.header-right {
 		position: fixed;
 		top: 0;
 		right: -100%;
@@ -76,119 +66,30 @@
 		height: 100vh;
 		background: rgba(0, 0, 0, 0.97);
 		flex-direction: column;
-		align-items: start;
-		padding: 70px 20px 20px 20px; /* Reducido de 80px a 20px */
+		align-items: flex-start;
+		padding: 80px 20px 20px 20px;
 		transition: 0.4s;
 		overflow-y: auto;
 		z-index: 999;
-		margin-top: 0;
-		justify-content: flex-start;
 	}
 
-	header.abajo .logo-menu {
+	header.abajo .header-right {
 		background: rgba(255, 255, 255, 0.98);
 		box-shadow: -2px 0 10px rgba(0,0,0,0.1);
 	}
 
-	.logo-menu.active {
+	.header-right.active {
 		right: 0;
-	}
-
-	header ul {
-		flex-direction: column;
-		align-items: flex-start;
-		width: 100%;
-		margin-top: 0;
-	}
-
-	header ul li {
-		width: 100%;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-	}
-
-	header.abajo ul li {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	}
-
-	header ul li a {
-		width: 100%;
-		margin: 0;
-		padding: 15px 10px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	/* Mostrar flecha en móviles */
-	.arrow {
-		display: inline-block;
-		font-size: 12px;
-		transition: transform 0.3s;
-		margin-left: auto;
-	}
-
-	/* Ajuste 3: Rotar flecha hacia abajo cuando está cerrado y hacia arriba cuando está abierto */
-	.has-submenu > a .arrow {
-		transform: rotate(0deg); /* Flecha apunta hacia abajo por defecto */
-	}
-
-	.has-submenu.active > a .arrow {
-		transform: rotate(180deg); /* Flecha apunta hacia arriba cuando está abierto */
-	}
-
-	/* Submenús en móvil */
-	header ul li ul {
-		position: static;
-		background: transparent;
-		border: none;
-		border-radius: 0;
-		border-right: none;
-		padding-left: 20px;
-		display: none;
-		width: 100%;
-		min-width: auto;
-		max-height: 0;
-		overflow: hidden;
-		transition: max-height 0.3s ease-out;
-	}
-
-	/* Deshabilitar hover en móvil */
-	header ul li:hover > ul {
-		display: none;
-	}
-
-	/* Mostrar submenú cuando está activo - se despliega hacia abajo */
-	header ul li.has-submenu.active > ul {
-		display: flex;
-		max-height: 500px;
-		transition: max-height 0.3s ease-in;
-	}
-
-	header ul li ul li {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-	}
-
-	header.abajo ul li ul li {
-		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	}
-
-	header ul li ul li a {
-		padding: 12px 10px;
-		font-size: 14px;
-	}
-
-	header ul li ul li ul {
-		padding-left: 15px;
 	}
 }
 
 @media (max-width: 480px) {
 	.logo {
-		width: 100px;
-		height: 80px;
+		width: 60px;
+		height: 66px;
 	}
 
-	.logo-menu {
+	.header-right {
 		width: 100%;
 	}
 }

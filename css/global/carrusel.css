@@ -1,0 +1,252 @@
+.Slider {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+/* Estilos para el carrusel de imágenes */
+.carousel {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.carousel-slides {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity 3s ease-in-out;
+}
+
+.slide.active {
+	opacity: 1;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+	z-index: 10;
+}
+
+.indicator {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+	background-color: #fff;
+}
+
+.indicator:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.textoSlider {
+	position: absolute;
+	font-style: italic;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+	background: rgba(94, 93, 93, 0.6);
+	padding: 40px 60px;
+	border-radius: 15px;
+	backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	max-width: 90%;
+	z-index: 5;
+}
+
+.textoSlider h1 {
+	font-size: 3.5rem;
+	margin-bottom: 20px;
+	font-weight: 700;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	letter-spacing: 2px;
+}
+
+.banner p1 {
+	font-size: 1.3rem;
+	line-height: 1.6;
+	display: block;
+	margin-top: 15px;
+	font-weight: 300;
+}
+
+
+/* RESPONSIVE - Tablets */
+@media (max-width: 1300px) {
+	.Slider {
+		height: 80vh; /* Aumentado para dar más espacio */
+	}
+
+	.textoSlider {
+		padding: 30px 45px;
+		max-width: 85%;
+	}
+
+	.textoSlider h1 {
+		font-size: 2.8rem;
+		letter-spacing: 1.5px;
+	}
+
+	.banner p1 {
+		font-size: 1.1rem;
+	}
+
+	.carousel-indicators {
+		bottom: 15px;
+		gap: 8px;
+	}
+
+	.indicator {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+/* RESPONSIVE - Móviles grandes */
+@media (max-width: 768px) {
+	.Slider {
+		height: 70vh; /* Aumentado para móviles grandes */
+	}
+
+	.textoSlider {
+		padding: 20px 30px;
+		max-width: 88%;
+		border-radius: 12px;
+		top: 45%; /* Ajuste más arriba */
+	}
+
+	.textoSlider h1 {
+		font-size: 2rem;
+		margin-bottom: 12px;
+		letter-spacing: 1px;
+	}
+
+	.banner p1 {
+		font-size: 0.95rem;
+		line-height: 1.4;
+		margin-top: 8px;
+	}
+
+	.carousel-indicators {
+		bottom: 12px;
+		gap: 7px;
+	}
+
+	.indicator {
+		width: 9px;
+		height: 9px;
+	}
+
+	/* Ajuste de imagen en móviles */
+	.slide img {
+		object-position: center center;
+	}
+}
+
+/* RESPONSIVE - Móviles pequeños */
+@media (max-width: 480px) {
+	.Slider {
+		height: 65vh; /* Altura aumentada para móviles pequeños */
+		min-height: 500px; /* Altura mínima garantizada */
+	}
+
+	.textoSlider {
+		padding: 18px 22px;
+		max-width: 90%;
+		border-radius: 10px;
+		background: rgba(94, 93, 93, 0.75);
+		top: 42%; /* Posición más centrada */
+	}
+
+	.textoSlider h1 {
+		font-size: 1.6rem;
+		margin-bottom: 10px;
+		letter-spacing: 0.5px;
+		line-height: 1.2;
+	}
+
+	.banner p1 {
+		font-size: 0.85rem;
+		line-height: 1.35;
+		margin-top: 6px;
+	}
+
+	.carousel-indicators {
+		bottom: 10px;
+		gap: 6px;
+	}
+
+	.indicator {
+		width: 8px;
+		height: 8px;
+	}
+}
+
+/* RESPONSIVE - Móviles muy pequeños */
+@media (max-width: 360px) {
+	.Slider {
+		height: 60vh; /* Altura aumentada */
+		min-height: 450px; /* Altura mínima */
+	}
+
+	.textoSlider {
+		padding: 15px 18px;
+		max-width: 92%;
+		border-radius: 8px;
+		background: rgba(94, 93, 93, 0.8);
+		top: 40%; /* Más arriba para centrarlo mejor */
+	}
+
+	.textoSlider h1 {
+		font-size: 1.4rem;
+		margin-bottom: 8px;
+		letter-spacing: 0.3px;
+		line-height: 1.15;
+	}
+
+	.banner p1 {
+		font-size: 0.75rem;
+		line-height: 1.3;
+		margin-top: 5px;
+	}
+
+	.carousel-indicators {
+		bottom: 8px;
+		gap: 5px;
+	}
+
+	.indicator {
+		width: 7px;
+		height: 7px;
+	}
+}

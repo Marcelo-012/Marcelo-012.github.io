@@ -1,9 +1,9 @@
 .seccion-cajas {
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     margin: 40px auto;
     padding: 0 20px;
 }
-
 
 a {
     text-decoration: none;
@@ -11,37 +11,42 @@ a {
 }
 
 .cajas-informativas {
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.cajas{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    margin-right: 0;
 }
 
 .caja {
-    width: 300px;
-    height: 400px; /* Cambio a auto para que se adapte al contenido */
+    width: 400px;
+    height: 480px;
     padding: 20px;
+    margin-right: 25px;
     position: relative;
     border-radius: 15px;
     background-color: #f5f5f5;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
-    flex-shrink: 0;
-    margin: 0;
     display: flex;
-    flex-direction: column; /* Cambio a columna para organizar verticalmente */
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Alinear al inicio */
+    justify-content: flex-start;
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
 /* Efecto hover */
 .caja:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-10px) scale(1.02);
     box-shadow: 8px 15px 25px rgba(0, 0, 0, 0.9);
     background: linear-gradient(360deg, #A61281 0%, #f5f5f5 100%);
+    z-index: 10;
 }
 
 /* Encabezado de la caja */
@@ -52,7 +57,7 @@ a {
     font-style: normal;
     color: #333;
     text-align: center;
-    margin: 0 0 15px 0;
+    margin: 5px 0 5px 0;
     padding-bottom: 10px;
     width: 100%;
 }
@@ -65,10 +70,10 @@ a {
 .caja img {
     width: 100%;
     height: auto;
-    object-fit: contain; /* o contain, según prefieras */
-    margin: 15px 0;
-    border-radius: 8px; /* opcional, para darle mejor aspecto */
-
+    max-height: 350px;
+    object-fit: cover;
+    margin: 25px 0;
+    border-radius: 8px;
 }
 
 /* Texto de la caja */
@@ -85,54 +90,119 @@ a {
 
 /* Cambiar color del texto en hover */
 .caja:hover p {
-    /*color: #333;*/
     color: #f5f5f5;
     font-family: "PT Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* RESPONSIVE - Para que se vean bien en móviles */
-@media (max-width: 1024px) {
-    .cajas-informativas {
-        justify-content: center;
-        gap: 15px;
+/* RESPONSIVE - Pantallas grandes */
+@media (max-width: 1300px) {
+    .seccion-cajas {
+        max-width: 100%;
     }
     
     .caja {
-        width: 280px;
+        width: 340px;
+        height: 420px;
     }
     
-    .Bienvenida {
-        font-size: 28px;
+    .cajas-informativas {
+        gap: 20px;
     }
 }
 
-@media (max-width: 768px) { 
-    .cajas-informativas {
+/* Transición a columna - 1200px */
+@media (max-width: 1200px) {
+    .cajas {
         flex-direction: column;
-        align-items: center;
     }
     
     .caja {
         width: 100%;
-        max-width: 400px;
-        margin: 10px 0;
+        max-width: 500px;
+        height: auto;
+        min-height: 450px;
+        margin-right: 0;
+        margin-bottom: 25px;
     }
     
-    .Bienvenida {
-        font-size: 24px;
+    .cajas-informativas {
+        gap: 0;
     }
 }
 
+/* Tablets - 768px */
+@media (max-width: 768px) { 
+    .cajas {
+        flex-direction: column;
+    }
+    
+    .caja {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        min-height: 400px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .cajas-informativas {
+        gap: 0;
+        padding: 15px;
+    }
+}
+
+/* Móviles - 480px */
 @media (max-width: 480px) {
+    .cajas {
+        flex-direction: column;
+    }
+    
+    .caja {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 350px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+    
+    .cajas-informativas {
+        gap: 0;
+        padding: 10px;
+    }
+    
+    .caja img {
+        max-height: 250px;
+    }
+}
+
+/* Móviles pequeños - 360px */
+@media (max-width: 360px) {
+    .cajas {
+        flex-direction: column;
+    }
+    
     .caja {
         width: 100%;
         height: auto;
-        min-height: 200px;
+        min-height: 320px;
+        margin-right: 0;
+        margin-bottom: 15px;
+        padding: 12px;
     }
     
-    .Bienvenida {
-        font-size: 20px;
+    .caja .encabezado {
+        font-size: 16px;
+    }
+    
+    .caja p {
+        font-size: 13px;
+    }
+    
+    .caja img {
+        max-height: 220px;
     }
 }

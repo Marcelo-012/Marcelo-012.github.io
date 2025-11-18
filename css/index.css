@@ -4,26 +4,8 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-/* Estilos para el carrusel de imágenes */
-.SliderCarrusel {
-    width: 100%;
-    height: auto;
-    margin: 0px auto 0px;
-    overflow: hidden;
-}
 
-.SliderCarrusel ul {
-    display: flex;
-    padding: 0;
-    width: 500%;
-    animation: slide 25s infinite alternate ease-in-out;
-}
 
-.SliderCarrusel li {
-    width: 100%;
-    list-style: none;
-    position: relative;
-}
 /* Termina estilos para el texto sobre el carrusel */
 
 .banner {
@@ -39,9 +21,10 @@
     align-items: center;
 }
 
+
 .Bienvenida {
     font-size: 36px;
-    color: #333;
+    color:  #333;
     font-weight: bold;
     padding-bottom: 15px;
     border-bottom: 1px solid #A61281; /*#894590*/
@@ -60,7 +43,7 @@
 
 .texto {
     position: absolute;
-    font-family: "Story Script", sans-serif;
+    font-family: "PT Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     top: 50%;
@@ -68,8 +51,8 @@
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 50px;
     border-radius: 10px;
     width: 90%;
     max-width: 800px;
@@ -80,14 +63,6 @@
     font-size: 18px;
     line-height: 1.6;
 }
-/* Termina estilos para el texto sobre el carrusel */
-
-/* Estilos para las imágenes del carrusel */
-.SliderCarrusel img {
-    width: 100%;
-    display: block;
-}
-/* Termina estilos para las imágenes del carrusel */
 
 
 /* Estilos para la sección de servicios */
@@ -153,39 +128,11 @@
             box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
         }      
 
-        /*.service-card:hover i {
-            color: #ffd700;
-        }
+       
 
-        .service-card:hover .service-title {
-            color: #ffd700;
-        }
-
-        .service-card:hover .service-title::after {
-            background-color: #ffd700;
-        }*/
-
-/* Animación para el carrusel */
-
-@keyframes slide {
-    0% {margin-left: 0;}
-    16% {margin-left: 0;}
-
-    20% {margin-left: -100%;}
-    36% {margin-left: -100%;}
-
-    40% {margin-left: -200%;}
-    56% {margin-left: -200%;}
-
-    60% {margin-left: -300%;}
-    76% {margin-left: -300%;}
-
-    80% {margin-left: -400%;}
-    100% {margin-left: -400%;}
-}
 
 /* RESPONSIVE - Tablets */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .Bienvenida {
         font-size: 28px;
         max-width: 85%;
@@ -257,7 +204,14 @@
 
 /* RESPONSIVE - Móviles muy pequeños */
 @media (max-width: 360px) {
-    
+    header{
+        padding: 10px 50px 0px 10px;  
+    }
+    .Bienvenida {
+        font-size: 18px;
+        max-width: 100%;
+        padding-bottom: 8px;
+    }
     .texto {
         padding: 10px 6px;
         width: 95%;

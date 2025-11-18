@@ -1,0 +1,517 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Zona 1 - Banner principal */
+.Zona1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor de imagen */
+.imagen-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Overlay oscuro para mejorar legibilidad del texto */
+.imagen-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 100%);
+}
+
+/* Wrapper para el contenido de texto */
+.wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 40px;
+}
+
+/* Información de la habitación */
+.info {
+    text-align: left;
+    color: white;
+}
+
+.titulo {
+    font-family: "PT Sans";
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Detalles de la habitación */
+.detalles {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.detalle-item i {
+    font-size: 28px;
+    color: white;
+}
+
+.detalle-item span {
+    font-size: 16px;
+    color: white;
+    line-height: 1.4;
+    text-align: left;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.banner {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    font-family: 'parisienne', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: start;
+}
+
+.main-content {
+    padding-right: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: #2c2c2c;
+}
+
+.description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 300;
+    margin: 50px 0 30px;
+    color: #2c2c2c;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    padding: 12px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: 1.05em;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.features-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #c9a961;
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.sidebar {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 20px;
+}
+
+.reserve-btn {
+    width: 100%;
+    background-color: #ACCA05;
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 35px;
+    transition: background-color 0.3s;
+}
+
+.reserve-btn:hover {
+    background-color: #A61281;
+}
+
+.sidebar h3 {
+    font-size: 1.8em;
+    font-weight: 300;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+}
+
+.amenities-list {
+    list-style: none;
+}
+
+.amenity-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1em;
+    color: #4a4a4a;
+}
+
+.amenity-item:last-child {
+    border-bottom: none;
+}
+
+.amenity-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+    color: #A61281;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.amenity-icon ion-icon {
+    font-size: 24px;
+}
+
+.Bienvenida {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #A61281;
+    width: fit-content;
+    max-width: 90%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .wrapper {
+        padding: 35px;
+    }
+
+    .titulo {
+        font-size: 42px;
+        margin-bottom: 18px;
+    }
+
+    .detalle-item i {
+        font-size: 26px;
+    }
+
+    .detalle-item span {
+        font-size: 15px;
+    }
+
+    .detalles {
+        gap: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Cambiar el grid a una sola columna en móviles */
+    .container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .main-content {
+        padding-right: 0;
+    }
+
+    /* El sidebar ya no es sticky en móviles */
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .Zona1 {
+        height: 70vh;
+    }
+
+    .wrapper {
+        padding: 30px;
+    }
+
+    .titulo {
+        font-size: 36px;
+        margin-bottom: 16px;
+    }
+
+    .detalles {
+        gap: 30px;
+    }
+
+    .detalle-item i {
+        font-size: 24px;
+    }
+
+    .detalle-item span {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 15px;
+        gap: 30px;
+    }
+
+    .sidebar {
+        padding: 30px 20px;
+    }
+
+    .Zona1 {
+        height: 60vh;
+    }
+
+    .wrapper {
+        padding: 20px;
+    }
+
+    .titulo {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .detalles {
+        gap: 25px;
+    }
+
+    .detalle-item {
+        gap: 10px;
+    }
+
+    .detalle-item i {
+        font-size: 22px;
+    }
+
+    .detalle-item span {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 20px 10px;
+        gap: 25px;
+    }
+
+    .sidebar {
+        padding: 25px 15px;
+    }
+
+    .Zona1 {
+        height: 50vh;
+    }
+
+    .wrapper {
+        padding: 15px;
+    }
+
+    .titulo {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .detalles {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .detalle-item i {
+        font-size: 20px;
+    }
+
+    .detalle-item span {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .reserve-btn {
+        padding: 15px;
+        font-size: 1em;
+    }
+}
+
+/* GALERÍA ESTILO INSTAGRAM */
+.gallery-section {
+    max-width: 1400px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.gallery-title {
+    font-size: 2.5em;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2c2c2c;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay ion-icon {
+    font-size: 48px;
+    color: white;
+}
+
+/* Responsive para la galería */
+@media (max-width: 768px) {
+    .gallery-section {
+        margin: 60px auto;
+    }
+
+    .gallery-title {
+        font-size: 2em;
+        margin-bottom: 35px;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery-overlay ion-icon {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        margin: 40px auto;
+    }
+
+    .gallery-title {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+
+    .instagram-grid {
+        gap: 8px;
+    }
+
+    .gallery-overlay ion-icon {
+        font-size: 32px;
+    }
+}

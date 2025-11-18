@@ -3,15 +3,15 @@
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
-    overflow-x: hidden; /* Evita scroll horizontal */
-}
+    overflow-x: hidden;
+  }
 
 /* Forzar que el widget sea responsive */
 .elfsight-app-b02cd7d0-61cd-4a34-ac44-9e3ee09f3c9e {
     width: 100% !important;
     max-width: 100% !important;
     font-family: "PT Sans", sans-serif;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
 }
 

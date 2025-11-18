@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fondo de imagen que cubre toda la página */
+body {
+    background: url(/img/imgHotel/IMG_0014-HDR.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    /* Añadir padding general para separar contenido */
+    padding: 20px 0;
+}
+
+.Zona1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    /* Añadir margen inferior para separar del siguiente contenido */
+    margin-bottom: 50px;
+}
+
+.banner {
+    position: absolute;
+    font-family: 'PT Sans', sans-serif;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(88, 88, 88, 0.6);
+    padding: 30px 60px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 1200px; /* Limitar ancho máximo */
+    z-index: 5;
+    /* Añadir márgenes internos responsivos */
+    margin: 20px auto;
+}
+
+.texto h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    margin: 20px;
+}
+
+
+/* Contenedor principal para el banner2 */
+.content-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0; /* Separación superior e inferior */
+}
+
+.banner2 {
+    position: relative;
+    font-family: 'PT Sans', sans-serif;
+    color: #fff;
+    background: rgba(162, 160, 160, 0.6);
+    padding: 40px 60px;
+    border-radius: 15px;
+    backdrop-filter: blur(9px);    
+    width: 90%;
+    max-width: 1200px; /* Limitar ancho máximo */
+    z-index: 5;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    overflow: hidden;
+    /* Quitar transform y posicionamiento absoluto */
+    margin: 0 auto;
+    /* Añadir márgenes para separación */
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* Efecto hover - similar a las cajas anteriores */
+.banner2:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 30px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+/* Efecto adicional para el texto dentro del banner2 */
+.banner2:hover .texto2 h3 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.banner2:hover .texto2 p {
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* Transiciones para el texto */
+.texto2 h2 {
+    text-align: center;
+    font-size: 3.2rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.texto2 p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    display: block;
+    margin-top: 15px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .banner {
+        padding: 25px 40px;
+        width: 95%;
+        margin-bottom: 20px;
+    }
+    
+    .banner2 {
+        padding: 35px 50px;
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .texto h1 {
+        font-size: 3rem;
+        margin-bottom: 25px;
+    }
+    
+    .texto2 h3 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .texto2 p {
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablets pequeñas y móviles grandes */
+@media (max-width: 768px) {
+    body {
+        padding: 15px 0;
+    }
+    
+    .Zona1 {
+        height: 80vh;
+        margin-bottom: 30px;
+    }
+    
+    .banner {
+        padding: 20px 30px;
+        width: 95%;
+        margin-bottom: 30px;
+    }
+    
+    .banner2 {
+        padding: 30px 40px;
+        width: 95%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .texto h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .texto h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .texto2 h3 {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    
+    .texto2 p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+    
+    /* Efectos hover más sutiles en móviles */
+    .banner2:hover {
+        transform: scale(1.02) translateY(-5px);
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    body {
+        padding: 10px 0;
+    }
+    
+    .Zona1 {
+        height: 70vh;
+        margin-bottom: 20px;
+    }
+    
+    .banner {
+        padding: 15px 20px;
+        width: 95%;
+        margin-bottom: 20px;
+    }
+    
+    .banner2 {
+        padding: 25px 30px;
+        width: 95%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .texto h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .texto h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .texto2 h3 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .texto2 p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    
+    .banner2:hover {
+        transform: scale(1.01) translateY(-3px);
+    }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: 360px) {
+    .banner {
+        padding: 12px 15px;
+    }
+    
+    .banner2 {
+        padding: 20px 25px;
+    }
+    
+    .texto h1 {
+        font-size: 1.8rem;
+    }
+    
+    .texto2 h3 {
+        font-size: 1.1rem;
+    }
+    
+    .texto2 p {
+        font-size: 0.9rem;
+    }
+}

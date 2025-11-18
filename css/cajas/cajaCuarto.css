@@ -9,17 +9,17 @@ a {
     color: inherit;
 }
 
-
 .contenedor-tarjetas {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
     flex-wrap: wrap;
     padding-bottom: 60px;
 }
 
+/* Tarjetas normales alineadas a la izquierda */
 .tarjeta-info {
     width: 650px;
     height: 350px;
@@ -30,34 +30,40 @@ a {
     flex-shrink: 0;
     transition: all 0.3s ease;
     cursor: pointer;
+    align-self: flex-start;
 }
 
-.right{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-/* Efecto de intercalado - desplaza la segunda tarjeta hacia abajo */
-.tarjeta-info.offset {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 30px;
-    flex-wrap: wrap;
+/* Tarjetas con clase "right" alineadas a la derecha */
+.tarjeta-info.right {
+    align-self: flex-end;
 }
 
 /* Efecto hover */
 .tarjeta-info:hover {
-    transform: translateY(-10px) scale(1.05);
+    width: 1050px;
     box-shadow: 8px 15px 25px rgba(0, 0, 0, 0.4);
+    z-index: 10;
 }
 
 /* Contenedor de la imagen */
 .imagen-habitacion {
-    position: relative;
-    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 650px;
     height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+/* Fijar imagen a la derecha para tarjetas .right */
+.tarjeta-info.right .imagen-habitacion {
+    left: auto;
+    right: 0;
+}
+
+.tarjeta-info:hover .imagen-habitacion {
+    width: 650px;
 }
 
 .imagen-habitacion img {
@@ -76,15 +82,12 @@ a {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 650px;
     padding: 25px;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 2;
 }
-
-/*.tarjeta-info:hover .overlay-info {
-    background: linear-gradient(to top, rgba(137, 69, 144, 0.9) 0%, rgba(137, 69, 144, 0.6) 50%, transparent 100%);
-}*/
 
 /* Título */
 .titulo-tarjeta {
@@ -134,6 +137,110 @@ a {
     font-weight: 500;
 }
 
+/* Panel de expansión - Derecha (tarjetas normales) */
+.descripcion-panel {
+    position: absolute;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: linear-gradient(360deg, #A61281 0%, #8B4590 100%);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    transition: right 0.3s ease, left 0.3s ease;
+    z-index: 3;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Al hacer hover en tarjetas normales, el panel aparece desde la derecha */
+.tarjeta-info:hover .descripcion-panel {
+    right: 0;
+}
+
+/* Panel de expansión - Izquierda (tarjetas con clase "right") */
+.tarjeta-info.right .descripcion-panel {
+    right: auto;
+    left: -400px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Al hacer hover en tarjetas "right", el panel aparece desde la izquierda */
+.tarjeta-info.right:hover .descripcion-panel {
+    left: 0;
+    right: auto;
+}
+
+.descripcion-panel h3 {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* Texto de descripción */
+.descripcion-panel p {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* Lista de características en el panel */
+.descripcion-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.descripcion-panel ul li {
+    font-family: "PT Sans", sans-serif;
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.descripcion-panel ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Botón en el panel */
+.descripcion-panel .btn-reservar {
+    margin-top: auto;
+    padding: 10px 20px;
+    background: #fff;
+    color: #A61281;
+    border: none;
+    border-radius: 25px;
+    font-family: "PT Sans", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1200px) {
     .contenedor-tarjetas {
         gap: 20px;
@@ -144,12 +251,31 @@ a {
         height: 300px;
     }
 
-    .tarjeta-info.offset {
-        margin-top: 30px;
+    .tarjeta-info:hover {
+        width: 700px;
     }
-    
-    .Bienvenida {
-        font-size: 28px;
+
+    .imagen-habitacion {
+        width: 550px;
+    }
+
+    .tarjeta-info:hover .imagen-habitacion {
+        width: 550px;
+    }
+
+    .overlay-info {
+        width: 550px;
+    }
+
+    .descripcion-panel {
+        width: 150px;
+        padding: 20px 15px;
+        right: -150px;
+    }
+
+    .tarjeta-info.right .descripcion-panel {
+        left: -150px;
+        right: auto;
     }
 
     .titulo-tarjeta {
@@ -172,9 +298,24 @@ a {
     .detalle-hab span {
         font-size: 12px;
     }
+
+    .descripcion-panel h3 {
+        font-size: 16px;
+    }
+
+    .descripcion-panel p {
+        font-size: 12px;
+    }
+
+    .descripcion-panel ul li {
+        font-size: 11px;
+    }
+
+    .descripcion-panel .btn-reservar {
+        font-size: 11px;
+        padding: 8px 15px;
+    }
 }
-
-
 
 @media (max-width: 768px) { 
     .contenedor-tarjetas {
@@ -182,15 +323,50 @@ a {
         align-items: center;
     }
     
-    .tarjeta-info {
+    .tarjeta-info,
+    .tarjeta-info.right {
         width: 100%;
         max-width: 500px;
         height: 280px;
         margin: 10px 0;
+        align-self: center;
     }
 
-    .tarjeta-info.offset {
-        margin-top: 10px;
+    /* Desactivar expansión de ancho en hover para móviles */
+    .tarjeta-info:hover,
+    .tarjeta-info.right:hover {
+        width: 100%;
+        max-width: 500px;
+        transform: translateY(-5px); /* Solo levanta ligeramente la tarjeta */
+    }
+
+    .imagen-habitacion,
+    .tarjeta-info.right .imagen-habitacion {
+        width: 100%;
+        left: 0;
+        right: auto;
+    }
+
+    .tarjeta-info:hover .imagen-habitacion,
+    .tarjeta-info.right:hover .imagen-habitacion {
+        width: 100%;
+    }
+
+    /* Zoom más suave en la imagen para móviles */
+    .tarjeta-info:hover .imagen-habitacion img,
+    .tarjeta-info.right:hover .imagen-habitacion img {
+        transform: scale(1.05); /* Zoom reducido de 1.1 a 1.05 */
+    }
+
+    .overlay-info {
+        width: 100%;
+        left: 0;
+        right: auto;
+    }
+
+    /* Ocultar panel en móviles */
+    .descripcion-panel {
+        display: none;
     }
     
     .Bienvenida {
@@ -219,12 +395,24 @@ a {
     }
 }
 
-
 @media (max-width: 480px) {
-    .tarjeta-info {
+    .tarjeta-info,
+    .tarjeta-info.right {
         width: 100%;
         max-width: 350px;
         height: 200px;
+    }
+
+    .tarjeta-info:hover,
+    .tarjeta-info.right:hover {
+        width: 100%;
+        max-width: 350px;
+        transform: translateY(-3px);
+    }
+
+    .tarjeta-info:hover .imagen-habitacion img,
+    .tarjeta-info.right:hover .imagen-habitacion img {
+        transform: scale(1.03);
     }
     
     .Bienvenida {
@@ -255,9 +443,21 @@ a {
 }
 
 @media (max-width: 380px) {
-    .tarjeta-info {
+    .tarjeta-info,
+    .tarjeta-info.right {
         width: 100%;
         height: 180px;
+    }
+
+    .tarjeta-info:hover,
+    .tarjeta-info.right:hover {
+        width: 100%;
+        transform: translateY(-3px);
+    }
+
+    .tarjeta-info:hover .imagen-habitacion img,
+    .tarjeta-info.right:hover .imagen-habitacion img {
+        transform: scale(1.02);
     }
 
     .titulo-tarjeta {
